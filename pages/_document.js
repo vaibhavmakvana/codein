@@ -14,7 +14,6 @@ export default function Document() {
           content="CodingWebStudio offers free and paid website code solutions for businesses looking to establish a strong online presence. Our Website delivers high-quality, responsive, and user-friendly web solutions. From front-end design to back-end development, we provide comprehensive coding services to help businesses thrive in the digital world." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.codingwebstudio.com" />
-        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Righteous&family=Signika+Negative:wght@600&family=Trade+Winds&display=swap"
