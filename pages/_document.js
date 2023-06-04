@@ -15,7 +15,7 @@ export default function Document() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.codingwebstudio.com" />
         {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Righteous&family=Signika+Negative:wght@600&family=Trade+Winds&display=swap"
           rel="stylesheet"></link>
