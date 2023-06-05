@@ -1,20 +1,21 @@
-import { useEffect, useRef, useState } from 'react';
+import { React, useEffect, useRef } from 'react';
 import Link from 'next/link'
-import styles from '../styles/Category.module.css'
+import styles from '../../styles/Category.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faChevronRight, faAngleDown, faAngleUp, faStar, faShoppingCart, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faStar, faShoppingCart, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 import Typed from 'typed.js';
 import Head from 'next/head';
+import Category from '@/components/category';
 
 const websitecategory = () => {
     const typedRef = useRef(null);
 
     useEffect(() => {
         const options = {
-            strings: ['E-commerce', 'Personal Website', 'Perfect Design', 'Responsive'],
-            typeSpeed: 100,
-            backSpeed: 100,
-            backDelay: 1000,
+            strings: ['E-commerce', 'Personal', 'Gaming', 'Blogging', 'Portfolio'],
+            typeSpeed: 40,
+            backSpeed: 40,
+            backDelay: 1200,
             loop: true
         };
 
@@ -24,18 +25,6 @@ const websitecategory = () => {
             typedRef.current.destroy(); // Cleanup the Typed.js instance when the component unmounts
         };
     }, []);
-
-    const [showAllCategories, setShowAllCategories] = useState(false);
-
-    const handleToggleCategories = () => {
-        setShowAllCategories(!showAllCategories);
-    };
-
-    const categoriesListStyle = {
-        height: showAllCategories ? 'auto' : '160px'
-    };
-
-    const buttonText = showAllCategories ? 'Show less' : 'Show more';
 
     return (<>
         <Head>
@@ -47,9 +36,11 @@ const websitecategory = () => {
                     <ul>
                         <li><Link href="/" legacyBehavior><a>Home</a></Link></li>
                         <li>/</li>
-                        <li>All</li>
+                        <li><Link href='/category/all-website-categories'>category</Link></li>
+                        <li>/</li>
+                        <li>all-website-categories</li>
                     </ul>
-                    <h1>Website Designs and Templates | <span className="multi-text"></span></h1>
+                    <h1>All Website Categories & Designs | <span className="multi-text"></span></h1>
                     <p>CodingWebStudio offers free and paid website code solutions for businesses looking to establish a strong online presence.</p>
                 </div>
                 <form>
@@ -58,42 +49,7 @@ const websitecategory = () => {
                 </form>
             </div>
         </section>
-        <section>
-            <div className={styles.allcatebox}>
-                <div className={styles.catebox}>
-                    <div className={styles.catetitlebx}>
-                        <div className={styles.cateimgbx}>
-                            <img src="/img/categories.png" alt="NOIMAGE" />
-                        </div>
-                        <h3>All categories</h3>
-                    </div>
-                    <div className={styles.categorieslist} style={categoriesListStyle}>
-                        <Link href="/ecommerce" legacyBehavior><a><span>E-commerce</span><span><FontAwesomeIcon
-                            icon={faChevronRight} className={styles.chevronR} /></span></a></Link>
-                        <Link href="/entertainment" legacyBehavior><a><span>Entertainment</span><span><FontAwesomeIcon
-                            icon={faChevronRight} className={styles.chevronR} /></span></a></Link>
-                        <Link href="/personal" legacyBehavior><a><span>Personal web</span><span><FontAwesomeIcon
-                            icon={faChevronRight} className={styles.chevronR} /></span></a></Link>
-                        <Link href="/resume" legacyBehavior><a><span>Resume web</span><span><FontAwesomeIcon
-                            icon={faChevronRight} className={styles.chevronR} /></span></a></Link>
-                        <Link href="/blogging" legacyBehavior><a><span>Blog web</span><span><FontAwesomeIcon
-                            icon={faChevronRight} className={styles.chevronR} /></span></a></Link>
-                        <Link href="/gaming" legacyBehavior><a><span>Gaming web</span><span><FontAwesomeIcon
-                            icon={faChevronRight} className={styles.chevronR} /></span></a></Link>
-                        <Link href="/bussiness" legacyBehavior><a><span>Business web</span><span><FontAwesomeIcon
-                            icon={faChevronRight} className={styles.chevronR} /></span></a></Link>
-                        <Link href="/event" legacyBehavior><a><span>Event website</span><span><FontAwesomeIcon
-                            icon={faChevronRight} className={styles.chevronR} /></span></a></Link>
-                        <Link href="/non-profitable" legacyBehavior><a><span>Nonprofit web</span><span><FontAwesomeIcon
-                            icon={faChevronRight} className={styles.chevronR} /></span></a></Link>
-                        <Link href="/sitetemplates" legacyBehavior><a><span>Site Templates</span><span><FontAwesomeIcon
-                            icon={faChevronRight} className={styles.chevronR} /></span></a></Link>
-
-                    </div>
-                </div>
-                <button className={styles.catebtn} onClick={handleToggleCategories}>{buttonText}<FontAwesomeIcon icon={showAllCategories ? faAngleUp : faAngleDown} className={styles.chevronD} /></button>
-            </div>
-        </section>
+        <Category />
         <section className={styles.latestsec}>
             <div className={styles.letestcards}>
                 <div className={styles.letesttitle}>
@@ -133,7 +89,7 @@ const websitecategory = () => {
 
                                 <div className={styles.cartlive}>
                                     <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://clothyfly-codingstudio.netlify.app/" className={styles.liveprebtn}
+                                    <Link href="https://clothyfly-codingwebstudio.netlify.app/" className={styles.liveprebtn}
                                         target="_blank">Live Preview</Link>
                                 </div>
                             </div>
@@ -179,7 +135,7 @@ const websitecategory = () => {
                         </div>
 
                     </div>
-                    <div className={styles.webcard} title="Clothyfly - Ecoomerce website design">
+                    <div className={styles.webcard} title="Trishaenterprise - Ecoomerce website design">
                         <Link href="/">
                             <div className={styles.webimg}>
                                 <img src="/img/trishaenterprise.PNG" alt="" />
@@ -194,20 +150,22 @@ const websitecategory = () => {
                                 </div>
                             </Link>
                             <div className={styles.porl}>
-                                <a href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
+                                <Link href="/" legacyBehavior>
+                                    <a>
+                                        <div className={styles.price}>
+                                            <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
+                                            <div className={styles.rating}>
+                                                <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
+                                                <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
+                                                <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
+                                                <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
+                                                <span className={styles.starp}>(0)</span>
+                                            </div>
+                                            <p className={styles.sales}>0 <span>Sales</span></p>
                                         </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </a>
+                                    </a>
+                                </Link>
 
                                 <div className={styles.cartlive}>
                                     <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
@@ -226,7 +184,7 @@ const websitecategory = () => {
             <div className={styles.blogging}>
                 <div className={styles.header}>
                     <h2>Blogging</h2>
-                    <a href="/">View All</a>
+                    <Link href="/category/blogging" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
                     <div className={styles.webcard} title="Clothyfly - Ecoomerce website design">
@@ -322,7 +280,7 @@ const websitecategory = () => {
                                 </div>
                             </Link>
                             <div className={styles.porl}>
-                                <a href="/">
+                                <Link href="/">
                                     <div className={styles.price}>
                                         <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
                                         <div className={styles.rating}>
@@ -335,7 +293,7 @@ const websitecategory = () => {
                                         </div>
                                         <p className={styles.sales}>0 <span>Sales</span></p>
                                     </div>
-                                </a>
+                                </Link>
 
                                 <div className={styles.cartlive}>
                                     <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
@@ -361,7 +319,7 @@ const websitecategory = () => {
                                 </div>
                             </Link>
                             <div className={styles.porl}>
-                                <a href="/">
+                                <Link href="/">
                                     <div className={styles.price}>
                                         <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
                                         <div className={styles.rating}>
@@ -374,7 +332,7 @@ const websitecategory = () => {
                                         </div>
                                         <p className={styles.sales}>0 <span>Sales</span></p>
                                     </div>
-                                </a>
+                                </Link>
 
                                 <div className={styles.cartlive}>
                                     <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
@@ -390,7 +348,7 @@ const websitecategory = () => {
             <div className={styles.Ecommerceweb}>
                 <div className={styles.header}>
                     <h2>Ecommerce</h2>
-                    <a href="/">View All</a>
+                    <Link href="/category/ecommerce" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
                     <div className={styles.webcard} title="Clothyfly - Ecoomerce website design">
@@ -425,7 +383,7 @@ const websitecategory = () => {
 
                                 <div className={styles.cartlive}>
                                     <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://clothyfly-codingstudio.netlify.app/" className={styles.liveprebtn}
+                                    <Link href="https://clothyfly-codingwebstudio.netlify.app/" className={styles.liveprebtn}
                                         target="_blank">Live Preview</Link>
                                 </div>
                             </div>
@@ -447,7 +405,7 @@ const websitecategory = () => {
                                 </div>
                             </Link>
                             <div className={styles.porl}>
-                                <a href="/">
+                                <Link href="/">
                                     <div className={styles.price}>
                                         <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
                                         <div className={styles.rating}>
@@ -460,7 +418,7 @@ const websitecategory = () => {
                                         </div>
                                         <p className={styles.sales}>0 <span>Sales</span></p>
                                     </div>
-                                </a>
+                                </Link>
 
                                 <div className={styles.cartlive}>
                                     <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
@@ -503,7 +461,7 @@ const websitecategory = () => {
 
                                 <div className={styles.cartlive}>
                                     <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://makmovies-codingstudio.netlify.app/" className={styles.liveprebtn}
+                                    <Link href="https://makmovies-codingwebstudio.netlify.app/" className={styles.liveprebtn}
                                         target="_blank">Live Preview</Link>
                                 </div>
                             </div>
@@ -525,7 +483,7 @@ const websitecategory = () => {
                                 </div>
                             </Link>
                             <div className={styles.porl}>
-                                <a href="/">
+                                <Link href="/">
                                     <div className={styles.price}>
                                         <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
                                         <div className={styles.rating}>
@@ -538,7 +496,7 @@ const websitecategory = () => {
                                         </div>
                                         <p className={styles.sales}>0 <span>Sales</span></p>
                                     </div>
-                                </a>
+                                </Link>
 
                                 <div className={styles.cartlive}>
                                     <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
@@ -554,7 +512,7 @@ const websitecategory = () => {
             <div className={styles.gamingweb}>
                 <div className={styles.header}>
                     <h2>Gaming & Entertainment</h2>
-                    <a href="/">View All</a>
+                    <Link href="/category/gaming" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
                     <div className={styles.webcard} title="Makmovies - Movie website design">
@@ -650,7 +608,7 @@ const websitecategory = () => {
                                 </div>
                             </Link>
                             <div className={styles.porl}>
-                                <a href="/">
+                                <Link href="/">
                                     <div className={styles.price}>
                                         <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
                                         <div className={styles.rating}>
@@ -663,7 +621,7 @@ const websitecategory = () => {
                                         </div>
                                         <p className={styles.sales}>0 <span>Sales</span></p>
                                     </div>
-                                </a>
+                                </Link>
 
                                 <div className={styles.cartlive}>
                                     <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
@@ -689,7 +647,7 @@ const websitecategory = () => {
                                 </div>
                             </Link>
                             <div className={styles.porl}>
-                                <a href="/">
+                                <Link href="/">
                                     <div className={styles.price}>
                                         <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
                                         <div className={styles.rating}>
@@ -702,7 +660,7 @@ const websitecategory = () => {
                                         </div>
                                         <p className={styles.sales}>0 <span>Sales</span></p>
                                     </div>
-                                </a>
+                                </Link>
 
                                 <div className={styles.cartlive}>
                                     <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
@@ -718,7 +676,7 @@ const websitecategory = () => {
             <div className={styles.portfolioweb}>
                 <div className={styles.header}>
                     <h2>Portfolio</h2>
-                    <a href="/">View All</a>
+                    <Link href="/category/portfolio" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
                     <div className={styles.webcard} title="Coming soon..">

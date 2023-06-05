@@ -101,7 +101,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.moreBtn}>
-          <Link href="/website-category" legacyBehavior><a><button className={styles.animatedbutton}>Explore More</button></a></Link>
+          <Link href="/category/all-website-categories" legacyBehavior><a><button className={styles.animatedbutton}>Explore More</button></a></Link>
         </div>
 
       </section>
@@ -216,7 +216,7 @@ export default function Home() {
 
         </div>
         <div className={styles.viewcate}>
-          <Link href="/website-category" legacyBehavior><a><button className={styles.animatedbutton}>View More Categories</button></a></Link>
+          <Link href="/category/all-website-categories" legacyBehavior><a><button className={styles.animatedbutton}>View More Categories</button></a></Link>
         </div>
       </section>
 
@@ -226,7 +226,7 @@ export default function Home() {
         </div>
         <div className={styles.uniqtext}>
           <h2>Unique themes and templates for every budget and every project.</h2>
-          <Link href="/website-category" legacyBehavior><a><button className={styles.animatedbutton}>VIEW MORE</button></a></Link>
+          <Link href="/category/all-website-categories" legacyBehavior><a><button className={styles.animatedbutton}>VIEW MORE</button></a></Link>
         </div>
       </section>
 
@@ -288,7 +288,7 @@ export default function Home() {
             </a>
           </div>
           <div className={styles.card}>
-            <Link href="/website-category" legacyBehavior>
+            <Link href="/" legacyBehavior>
               <a>
                 <img src="/img/noimage.jpg" alt="Movie 6" />
                 <span>VIEW LIVE</span>

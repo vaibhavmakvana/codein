@@ -94,6 +94,11 @@ nav.sticky #navbar li a {
   color: black;
 }
 
+nav.sticky #navbar li a.active,
+nav.sticky #navbar li a:hover {
+  color: #17cf97;
+}
+
 #mobile {
   display: none;
 }
@@ -137,6 +142,10 @@ nav.sticky #mobile .bar {
 
   nav.sticky #navbar li a {
     color: white;
+  }
+
+  nav.sticky #navbar li a.active {
+    color: #17cf97;
   }
 
   #mobile {
@@ -230,6 +239,7 @@ nav.sticky #mobile .bar {
   .logo a {
     font-size: 18px;
   }
+
   .logo a img {
     width: 20px;
   }

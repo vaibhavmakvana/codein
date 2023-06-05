@@ -63,40 +63,40 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link href="/ecommerce" passHref legacyBehavior>
+                        <Link href="/category/ecommerce" passHref legacyBehavior>
                             <a
-                                className={activeLink === '/ecommerce' ? 'active' : ''}
-                                onClick={() => handleLinkClick('/ecommerce')}
+                                className={activeLink === '/category/ecommerce' ? 'active' : ''}
+                                onClick={() => handleLinkClick('/category/ecommerce')}
                             >
                                 E-commerce
                             </a>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/portfolio" passHref legacyBehavior>
+                        <Link href="/category/portfolio" passHref legacyBehavior>
                             <a
-                                className={activeLink === '/portfolio' ? 'active' : ''}
-                                onClick={() => handleLinkClick('/portfolio')}
+                                className={activeLink === '/category/portfolio' ? 'active' : ''}
+                                onClick={() => handleLinkClick('/category/portfolio')}
                             >
                                 Portfolio
                             </a>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/gaming" passHref legacyBehavior>
+                        <Link href="/category/movies" passHref legacyBehavior>
                             <a
-                                className={activeLink === '/gaming' ? 'active' : ''}
-                                onClick={() => handleLinkClick('/gaming')}
+                                className={activeLink === '/category/movies' ? 'active' : ''}
+                                onClick={() => handleLinkClick('/category/movies')}
                             >
-                                Gaming
+                                Movies
                             </a>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/website-category" passHref legacyBehavior>
+                        <Link href="/category/all-website-categories" passHref legacyBehavior>
                             <a
-                                className={activeLink === '/website-category' ? 'active' : ''}
-                                onClick={() => handleLinkClick('/website-category')}
+                                className={activeLink === '/category/all-website-categories' ? 'active' : ''}
+                                onClick={() => handleLinkClick('/category/all-website-categories')}
                             >
                                 Category
                             </a>
