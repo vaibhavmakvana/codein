@@ -2,10 +2,10 @@ import React from 'react'
 import Head from 'next/head'
 import styles from '../../styles/Websites.module.css'
 import Link from 'next/link'
-import Category from '@/components/category';
+import Category from '../../components/Category';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import Searchsec from '@/components/Searchsec';
+import Searchsec from '../../components/Searchsec';
 
 const portfolio = () => {
   return (

@@ -3,9 +3,10 @@ import Head from 'next/head'
 import styles from '../../styles/Websites.module.css'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faStar, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import Category from '@/components/category';
-import Searchsec from '@/components/Searchsec';
+import { faStar, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import Category from '../../components/Category';
+import Searchsec from '../../components/Searchsec';
+
 
 const ecommerce = () => {
 

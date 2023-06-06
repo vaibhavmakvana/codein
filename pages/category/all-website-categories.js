@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faStar, faShoppingCart, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 import Typed from 'typed.js';
 import Head from 'next/head';
-import Category from '@/components/category';
+import Category from '../../components/Category';
 
 const websitecategory = () => {
     const typedRef = useRef(null);
