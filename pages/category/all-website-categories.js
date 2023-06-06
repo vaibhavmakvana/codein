@@ -1,11 +1,12 @@
-import { React, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link'
 import styles from '../../styles/Category.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faStar, faShoppingCart, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 import Typed from 'typed.js';
 import Head from 'next/head';
 import Category from '../../components/Category';
+import Cards from '../../components/Cards';
 
 const websitecategory = () => {
     const typedRef = useRef(null);
@@ -57,125 +58,27 @@ const websitecategory = () => {
                     <a href="/">Browse On Sale Website</a>
                 </div>
                 <div className={styles.cardswebsite}>
-                    <div className={styles.webcard} title="Clothyfly - Ecoomerce website design">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/Clothyfly.PNG" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Clothyfly - Ecoomerce Website Design And Responsive Design</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://clothyfly-codingwebstudio.netlify.app/" className={styles.liveprebtn}
-                                        target="_blank">Live Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Makmovies - Movie website design">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/makmovies.PNG" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Makmovies - Movie Website Design And Responsive Design</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://makmovies-codingstudio.netlify.app/" className={styles.liveprebtn}
-                                        target="_blank">Live Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Trishaenterprise - Ecoomerce website design">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/trishaenterprise.PNG" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Trishaenterprise - Ecoomerce Website Design And Responsive Design</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/" legacyBehavior>
-                                    <a>
-                                        <div className={styles.price}>
-                                            <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                            <div className={styles.rating}>
-                                                <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                                <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                                <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                                <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                                <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                                <span className={styles.starp}>(0)</span>
-                                            </div>
-                                            <p className={styles.sales}>0 <span>Sales</span></p>
-                                        </div>
-                                    </a>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://trishaenterprise.co.in/" className={styles.liveprebtn} target="_blank">Live
-                                        Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <Cards title="Clothyfly - Ecoomerce website design"
+                        imgSrc="/img/Clothyfly.PNG"
+                        viewsCount={10}
+                        linkHref="/category/all-website-categories"
+                        webHref="https://clothyfly-codingwebstudio.netlify.app/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Makmovies - Movie website design"
+                        imgSrc="/img/makmovies.PNG"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://makmovies-codingstudio.netlify.app/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Trishaenterprise - Ecoomerce website design"
+                        imgSrc="/img/trishaenterprise.PNG"
+                        viewsCount={10}
+                        linkHref="/category/all-website-categories"
+                        webHref="https://trishaenterprise.co.in/"
+                        bmoney="0"
+                        cost="Free" />
                 </div>
             </div >
         </section >
@@ -187,162 +90,34 @@ const websitecategory = () => {
                     <Link href="/category/blogging" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
-                    <div className={styles.webcard} title="Clothyfly - Ecoomerce website design">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://clothyfly-codingstudio.netlify.app/" className={styles.liveprebtn}
-                                        target="_blank">Live Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Makmovies - Movie website design">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://makmovies-codingstudio.netlify.app/" className={styles.liveprebtn}
-                                        target="_blank">Live Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Clothyfly - Ecoomerce website design">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://trishaenterprise.co.in/" className={styles.liveprebtn} target="_blank">Live
-                                        Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Clothyfly - Ecoomerce website design">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://trishaenterprise.co.in/" className={styles.liveprebtn} target="_blank">Live
-                                        Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
                 </div>
             </div>
             <div className={styles.Ecommerceweb}>
@@ -351,162 +126,34 @@ const websitecategory = () => {
                     <Link href="/category/ecommerce" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
-                    <div className={styles.webcard} title="Clothyfly - Ecoomerce website design">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/Clothyfly.PNG" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Clothyfly - Ecoomerce Website Design And Responsive Design</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://clothyfly-codingwebstudio.netlify.app/" className={styles.liveprebtn}
-                                        target="_blank">Live Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Trishaenterprise - Ecoomerce website design">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/trishaenterprise.PNG" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Trishaenterprise - Ecoomerce Website Design And Responsive Design</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://trishaenterprise.co.in/" className={styles.liveprebtn} target="_blank">Live
-                                        Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Coming soon..">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://makmovies-codingwebstudio.netlify.app/" className={styles.liveprebtn}
-                                        target="_blank">Live Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Coming soon..">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://trishaenterprise.co.in/" className={styles.liveprebtn} target="_blank">Live
-                                        Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <Cards title="Clothyfly - Ecoomerce website design"
+                        imgSrc="/img/Clothyfly.PNG"
+                        viewsCount={10}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://clothyfly-codingwebstudio.netlify.app/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Trishaenterprise - Ecoomerce website design"
+                        imgSrc="/img/trishaenterprise.PNG"
+                        viewsCount={10}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://trishaenterprise.co.in/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
                 </div>
             </div>
             <div className={styles.gamingweb}>
@@ -515,162 +162,34 @@ const websitecategory = () => {
                     <Link href="/category/gaming" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
-                    <div className={styles.webcard} title="Makmovies - Movie website design">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/makmovies.PNG" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Makmovies - Movie Website Design And Responsive Design</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://makmovies-codingstudio.netlify.app/" className={styles.liveprebtn}
-                                        target="_blank">Live Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Coming soon..">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://clothyfly-codingstudio.netlify.app/" className={styles.liveprebtn}
-                                        target="_blank">Live Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Coming soon..">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://trishaenterprise.co.in/" className={styles.liveprebtn} target="_blank">Live
-                                        Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Coming soon..">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://trishaenterprise.co.in/" className={styles.liveprebtn} target="_blank">Live
-                                        Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <Cards title="Makmovies - Movie website design"
+                        imgSrc="/img/makmovies.PNG"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://makmovies-codingstudio.netlify.app/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
                 </div>
             </div>
             <div className={styles.portfolioweb}>
@@ -679,162 +198,34 @@ const websitecategory = () => {
                     <Link href="/category/portfolio" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
-                    <div className={styles.webcard} title="Coming soon..">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://clothyfly-codingstudio.netlify.app/" className={styles.liveprebtn}
-                                        target="_blank">Live Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Coming soon..">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://makmovies-codingstudio.netlify.app/" className={styles.liveprebtn}
-                                        target="_blank">Live Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Coming soon..">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://trishaenterprise.co.in/" className={styles.liveprebtn} target="_blank">Live
-                                        Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.webcard} title="Coming soon..">
-                        <Link href="/">
-                            <div className={styles.webimg}>
-                                <img src="/img/noimage.jpg" alt="" />
-                                <div className={styles.cardoverlay}></div>
-                            </div>
-                        </Link>
-                        <div className={styles.webdetails}>
-                            <Link href="/">
-                                <div className={styles.webtitle}>
-                                    <h3>Comming soon...</h3>
-                                    <p>by Coding Studio | Fully Responsive Design.</p>
-                                </div>
-                            </Link>
-                            <div className={styles.porl}>
-                                <Link href="/">
-                                    <div className={styles.price}>
-                                        <p className={styles.nmoney}>Free <span className={styles.bmoney}>₹9999</span></p>
-                                        <div className={styles.rating}>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span ><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
-                                            <span className={styles.starp}>(0)</span>
-                                        </div>
-                                        <p className={styles.sales}>0 <span>Sales</span></p>
-                                    </div>
-                                </Link>
-
-                                <div className={styles.cartlive}>
-                                    <Link href='/'><button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button></Link>
-                                    <Link href="https://trishaenterprise.co.in/" className={styles.liveprebtn} target="_blank">Live
-                                        Preview</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
+                    <Cards title="Coming soon..."
+                        imgSrc="/img/noimage.jpg"
+                        viewsCount={0}
+                        pageHref="/category/all-website-categories"
+                        webHref="https://www.google.com/"
+                        bmoney="0"
+                        cost="Free" />
                 </div>
             </div>
         </section>

@@ -5,6 +5,7 @@ import styles from '../styles/Category.module.css'
 import Link from 'next/link'
 
 const Searchsec = (props) => {
+    const { name, pera } = props;
     return (
         <section className={styles.searchsec}>
             <div className={`${styles.websearch} ${styles.maxwidth}`}>
@@ -14,10 +15,10 @@ const Searchsec = (props) => {
                         <li>/</li>
                         <li><Link href='/category/all-website-categories'>category</Link></li>
                         <li>/</li>
-                        <li>{props.name}</li>
+                        <li>{name}</li>
                     </ul>
-                    <h1>{props.name} Websites Templates</h1>
-                    <p>{props.pera}</p>
+                    <h1>{name}</h1>
+                    <p>{pera}</p>
                 </div>
                 <form>
                     <input type="search" placeholder="e.g. responsive websites codes" name="term" />
