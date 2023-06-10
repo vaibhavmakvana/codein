@@ -5,7 +5,7 @@ import styles from '../styles/Category.module.css'
 import Link from 'next/link'
 
 const Searchsec = (props) => {
-    const { name, pera } = props;
+    const { title, name, pera , btitle = 'category'} = props;
     return (
         <section className={styles.searchsec}>
             <div className={`${styles.websearch} ${styles.maxwidth}`}>
@@ -13,17 +13,17 @@ const Searchsec = (props) => {
                     <ul>
                         <li><Link href="/" legacyBehavior><a>Home</a></Link></li>
                         <li>/</li>
-                        <li><Link href='/category/all-website-categories'>category</Link></li>
+                        <li><Link href='/category/all-website-categories'>{btitle}</Link></li>
                         <li>/</li>
-                        <li>{name}</li>
+                        <li>{title}</li>
                     </ul>
                     <h1>{name}</h1>
-                    <p>{pera}</p>
                 </div>
                 <form>
                     <input type="search" placeholder="e.g. responsive websites codes" name="term" />
                     <button type="submit" aria-label="Search"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
                 </form>
+                <p className={styles.pagelistpera}>{pera}</p>
             </div>
         </section>
     )

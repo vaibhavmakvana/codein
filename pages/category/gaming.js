@@ -11,7 +11,7 @@ const gaming = () => {
       <Head>
         <title>Code In Gaming</title>
       </Head>
-      <Searchsec name={"Gaming Websites Templates"} pera={"Embark on an epic gaming adventure with our state-of-the-art website template. Download it for free and level up your website today!"} />
+      <Searchsec title={"gaming"} name={"Gaming Websites Templates"} pera={"Embark on an epic gaming adventure with our state-of-the-art website template. Download it for free and level up your website today!"} />
       <Category />
       <section className={`${styles.websitefilter} ${styles.maxwidth}`}>
         <div className={styles.Ecommerceweb}>

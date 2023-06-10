@@ -21,7 +21,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: #212121;
-  padding: 20px 80px;
+  padding: 20px 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
   font-size: 18px;
   font-weight: 600;
@@ -34,7 +34,7 @@ nav {
 }
 
 nav.sticky {
-  padding: 12px 80px;
+  padding: 12px 30px;
   background-color: white;
 }
 
@@ -162,13 +162,13 @@ nav.sticky #mobile .bar {
 
 @media screen and (max-width:900px) {
   nav {
-    padding: 20px 40px;
+    padding: 20px 30px;
     font-size: 18px;
     font-weight: 600;
   }
 
   nav.sticky {
-    padding: 12px 40px;
+    padding: 12px 30px;
   }
 }
 

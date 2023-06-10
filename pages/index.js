@@ -89,7 +89,7 @@ export default function Home() {
             /></a>
           </div>
           <div className={styles.topGbtn}>
-            <Link href="#website" className="website" legacyBehavior>
+            <Link href="/category/alldesigns" className="website" legacyBehavior>
               <a>
                 <svg>
                   <rect></rect>

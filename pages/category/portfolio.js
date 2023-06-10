@@ -11,7 +11,7 @@ const portfolio = () => {
       <Head>
         <title>Code In Portfolio</title>
       </Head>
-      <Searchsec name={"Portfolio Websites Templates"} pera={"Elevate your professional portfolio with our cutting-edge website template. Download it for free and make a lasting impression!"} />
+      <Searchsec title={"protfolio"} name={"Portfolio Websites Templates"} pera={"Elevate your professional portfolio with our cutting-edge website template. Download it for free and make a lasting impression!"} />
       <Category />
       <section className={`${styles.websitefilter} ${styles.maxwidth}`}>
         <div className={styles.Ecommerceweb}>

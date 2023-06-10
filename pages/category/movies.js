@@ -11,7 +11,7 @@ const movie = () => {
       <Head>
         <title>Code In Movie Websites</title>
       </Head>
-      <Searchsec name={"Movie Websites Templates"} pera={"Introducing our latest movie website template: a sleek and modern design to showcase your films professionally."} />
+      <Searchsec title={"movies"} name={"Movie Websites Templates"} pera={"Introducing our latest movie website template: a sleek and modern design to showcase your films professionally."} />
       <Category />
       <section className={`${styles.websitefilter} ${styles.maxwidth}`}>
         <div className={styles.Ecommerceweb}>
@@ -22,7 +22,7 @@ const movie = () => {
             <Cards title="Makmovies - Movie website design"
               imgSrc="/img/makmovies.PNG"
               viewsCount={0}
-              pageHref="/category/all-website-categories"
+              pageHref="/webpages/download-free-movie-website-template"
               webHref="https://makmovies-codingstudio.netlify.app/"
               bmoney="21"
               cost="Free" />

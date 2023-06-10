@@ -38,9 +38,9 @@
     color: #333;
 }
 
-.pagelist p {
+.pagelistpera {
     font-size: 14px;
-    padding-bottom: 15px;
+    padding-bottom: 18px;
     color: #666;
 }
 
@@ -620,13 +620,12 @@
 
 @media screen and (max-width:1400px) {
     .websearch {
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 0 40px;
     }
 
     .websearch form {
         margin-bottom: 20px;
-        width: 100%;
     }
 
     .pagelist {
@@ -634,14 +633,14 @@
     }
 
     .websearch form input {
-        width: 400px;
+        width: 388px;
     }
 
     .pagelist h1 {
         font-size: 26px;
     }
 
-    .pagelist p {
+    .pagelistpera {
         font-size: 13px;
     }
 
@@ -649,6 +648,22 @@
         width: 95%;
     }
 
+
+
+    .cardswebsite {
+        margin: 0 auto;
+    }
+
+    .maxwidth {
+        max-width: 1380px;
+    }
+
+    .webcardb:nth-last-child(1) {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1332px) {
     .letesttitle {
         text-align: center;
         margin: 22px auto;
@@ -661,18 +676,6 @@
 
     .letesttitle a {
         font-size: 16px;
-    }
-
-    .cardswebsite {
-        margin: 0 auto;
-    }
-
-    .maxwidth {
-        max-width: 1060px;
-    }
-
-    .webcardb:nth-last-child(1) {
-        display: none;
     }
 }
 
@@ -698,6 +701,17 @@
     .gamingweb,
     .portfolioweb {
         padding: 0 25px;
+    }
+
+    .websearch form input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .websearch form {
+        width: 100%;
     }
 }
 

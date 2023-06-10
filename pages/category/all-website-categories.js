@@ -1,14 +1,63 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link'
 import styles from '../../styles/Category.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import Typed from 'typed.js';
 import Head from 'next/head';
 import Category from '../../components/Category';
-import Cards from '../../components/Cards';
 
 const websitecategory = () => {
+    // const [blogs, setBlogs] = useState([]);
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/api/blogs').then((a) => {
+    //         return a.json();
+    //     })
+    //         .then((parsed) => {
+    //             console.log(parsed)
+    //             setBlogs(parsed.slice(0, 3));
+    //         })
+    // }, []);
+    const [section1Blogs, setSection1Blogs] = useState([]);
+    const [section2Blogs, setSection2Blogs] = useState([]);
+    const [section3Blogs, setSection3Blogs] = useState([]);
+    const [section4Blogs, setSection4Blogs] = useState([]);
+    const [section5Blogs, setSection5Blogs] = useState([]);
+
+
+    useEffect(() => {
+        fetch('http://localhost:3000/api/blogs')
+            .then((response) => response.json())
+            .then((parsed) => {
+                // Assuming parsed is an array of blog posts
+
+                // Filter posts based on their types
+                const type2Blogs = parsed.filter((blogitem) => blogitem.type === 'ecommece');
+                const type3Blogs = parsed.filter((blogitem) => blogitem.type === 'ecommece');
+                const type4Blogs = parsed.filter((blogitem) => blogitem.type === 'ecommece');
+                const type5Blogs = parsed.filter((blogitem) => blogitem.type === 'ecommece');
+
+
+                // Set section 1 blogs
+                setSection1Blogs(parsed.slice(0, 3));
+
+                // Set section 2 blogs
+                setSection2Blogs(type2Blogs.slice(0, 4));
+
+                // Set section 3 blogs
+                setSection3Blogs(type3Blogs);
+
+                // Set section 4 blogs
+                setSection4Blogs(type4Blogs);
+
+                // Set section 4 blogs
+                setSection5Blogs(type5Blogs);
+
+        
+            });
+    }, []);
+
     const typedRef = useRef(null);
 
     useEffect(() => {
@@ -37,17 +86,17 @@ const websitecategory = () => {
                     <ul>
                         <li><Link href="/" legacyBehavior><a>Home</a></Link></li>
                         <li>/</li>
-                        <li><Link href='/category/all-website-categories'>category</Link></li>
+                        <li><Link href='/webpages/codedemo'>category</Link></li>
                         <li>/</li>
                         <li>all-website-categories</li>
                     </ul>
                     <h1>All Website Categories & Designs | <span className="multi-text"></span></h1>
-                    <p>CodingWebStudio offers free and paid website code solutions for businesses looking to establish a strong online presence.</p>
                 </div>
                 <form>
                     <input type="search" placeholder="e.g. responsive websites codes" name="term" />
                     <button type="submit" aria-label="Search"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
                 </form>
+                <p className={styles.pagelistpera}>CodingWebStudio offers free and paid website code solutions for businesses looking to establish a strong online presence.</p>
             </div>
         </section>
         <Category />
@@ -58,27 +107,48 @@ const websitecategory = () => {
                     <a href="/">Browse On Sale Website</a>
                 </div>
                 <div className={styles.cardswebsite}>
-                    <Cards title="Clothyfly - Ecoomerce website design"
-                        imgSrc="/img/Clothyfly.PNG"
-                        viewsCount={10}
-                        linkHref="/category/all-website-categories"
-                        webHref="https://clothyfly-codingwebstudio.netlify.app/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Makmovies - Movie website design"
-                        imgSrc="/img/makmovies.PNG"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://makmovies-codingstudio.netlify.app/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Trishaenterprise - Ecoomerce website design"
-                        imgSrc="/img/trishaenterprise.PNG"
-                        viewsCount={10}
-                        linkHref="/category/all-website-categories"
-                        webHref="https://trishaenterprise.co.in/"
-                        bmoney="0"
-                        cost="Free" />
+                    {section1Blogs.map((blogitem) => {
+                        return <div className={styles.webcard} title={blogitem.title} key={blogitem.slug}>
+                            <Link href={`../webpages/${blogitem.slug}`}>
+                                <div className={styles.webimg}>
+                                    <img src={blogitem.imgSrc} alt="/img/noimage.jpg" />
+                                    <div className={styles.cardoverlay}></div>
+                                </div>
+                            </Link>
+                            <div className={styles.webdetails}>
+                                <Link href={`../webpages/${blogitem.slug}`}>
+                                    <div className={styles.webtitle}>
+                                        <h3>{blogitem.title}</h3>
+                                        <p>by Coding Web Studio | Fully Responsive Design.</p>
+                                    </div>
+                                </Link>
+                                <div className={styles.porl}>
+                                    <Link href={`../webpages/${blogitem.slug}`}>
+                                        <div className={styles.price}>
+                                            <p className={styles.nmoney}>{blogitem.priceAfter} <span className={styles.bmoney}>{blogitem.pricebefore}</span></p>
+                                            <div className={styles.rating}>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
+                                            </div>
+                                            <p className={styles.sales}>{blogitem.views} <span>views</span></p>
+                                        </div>
+                                    </Link>
+
+                                    <div className={styles.cartlive}>
+                                        <Link href={`../webpages/${blogitem.slug}`}>
+                                            <button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button>
+                                        </Link>
+                                        <a href={blogitem.href} className={styles.liveprebtn} target="_blank">
+                                            Live Preview
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    })}
                 </div>
             </div >
         </section >
@@ -90,34 +160,48 @@ const websitecategory = () => {
                     <Link href="/category/blogging" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
+                {section2Blogs.map((blogitem) => {
+                        return <div className={styles.webcard} title={blogitem.title} key={blogitem.slug}>
+                            <Link href={`../webpages/${blogitem.slug}`}>
+                                <div className={styles.webimg}>
+                                    <img src={blogitem.imgSrc} alt="/img/noimage.jpg" />
+                                    <div className={styles.cardoverlay}></div>
+                                </div>
+                            </Link>
+                            <div className={styles.webdetails}>
+                                <Link href={`../webpages/${blogitem.slug}`}>
+                                    <div className={styles.webtitle}>
+                                        <h3>{blogitem.title}</h3>
+                                        <p>by Coding Web Studio | Fully Responsive Design.</p>
+                                    </div>
+                                </Link>
+                                <div className={styles.porl}>
+                                    <Link href={`../webpages/${blogitem.slug}`}>
+                                        <div className={styles.price}>
+                                            <p className={styles.nmoney}>{blogitem.priceAfter} <span className={styles.bmoney}>{blogitem.pricebefore}</span></p>
+                                            <div className={styles.rating}>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
+                                            </div>
+                                            <p className={styles.sales}>{blogitem.views} <span>views</span></p>
+                                        </div>
+                                    </Link>
+
+                                    <div className={styles.cartlive}>
+                                        <Link href={`../webpages/${blogitem.slug}`}>
+                                            <button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button>
+                                        </Link>
+                                        <a href={blogitem.href} className={styles.liveprebtn} target="_blank">
+                                            Live Preview
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    })}
                 </div>
             </div>
             <div className={styles.Ecommerceweb}>
@@ -126,34 +210,48 @@ const websitecategory = () => {
                     <Link href="/category/ecommerce" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
-                    <Cards title="Clothyfly - Ecoomerce website design"
-                        imgSrc="/img/Clothyfly.PNG"
-                        viewsCount={10}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://clothyfly-codingwebstudio.netlify.app/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Trishaenterprise - Ecoomerce website design"
-                        imgSrc="/img/trishaenterprise.PNG"
-                        viewsCount={10}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://trishaenterprise.co.in/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
+                    {section3Blogs.map((blogitem) => {
+                        return <div className={styles.webcard} title={blogitem.title} key={blogitem.slug}>
+                            <Link href={`../webpages/${blogitem.slug}`}>
+                                <div className={styles.webimg}>
+                                    <img src={blogitem.imgSrc} alt="/img/noimage.jpg" />
+                                    <div className={styles.cardoverlay}></div>
+                                </div>
+                            </Link>
+                            <div className={styles.webdetails}>
+                                <Link href={`../webpages/${blogitem.slug}`}>
+                                    <div className={styles.webtitle}>
+                                        <h3>{blogitem.title}</h3>
+                                        <p>by Coding Web Studio | Fully Responsive Design.</p>
+                                    </div>
+                                </Link>
+                                <div className={styles.porl}>
+                                    <Link href={`../webpages/${blogitem.slug}`}>
+                                        <div className={styles.price}>
+                                            <p className={styles.nmoney}>{blogitem.priceAfter} <span className={styles.bmoney}>{blogitem.pricebefore}</span></p>
+                                            <div className={styles.rating}>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
+                                            </div>
+                                            <p className={styles.sales}>{blogitem.views} <span>views</span></p>
+                                        </div>
+                                    </Link>
+
+                                    <div className={styles.cartlive}>
+                                        <Link href={`../webpages/${blogitem.slug}`}>
+                                            <button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button>
+                                        </Link>
+                                        <a href={blogitem.href} className={styles.liveprebtn} target="_blank">
+                                            Live Preview
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    })}
                 </div>
             </div>
             <div className={styles.gamingweb}>
@@ -162,34 +260,48 @@ const websitecategory = () => {
                     <Link href="/category/gaming" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
-                    <Cards title="Makmovies - Movie website design"
-                        imgSrc="/img/makmovies.PNG"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://makmovies-codingstudio.netlify.app/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
+                {section4Blogs.map((blogitem) => {
+                        return <div className={styles.webcard} title={blogitem.title} key={blogitem.slug}>
+                            <Link href={`../webpages/${blogitem.slug}`}>
+                                <div className={styles.webimg}>
+                                    <img src={blogitem.imgSrc} alt="/img/noimage.jpg" />
+                                    <div className={styles.cardoverlay}></div>
+                                </div>
+                            </Link>
+                            <div className={styles.webdetails}>
+                                <Link href={`../webpages/${blogitem.slug}`}>
+                                    <div className={styles.webtitle}>
+                                        <h3>{blogitem.title}</h3>
+                                        <p>by Coding Web Studio | Fully Responsive Design.</p>
+                                    </div>
+                                </Link>
+                                <div className={styles.porl}>
+                                    <Link href={`../webpages/${blogitem.slug}`}>
+                                        <div className={styles.price}>
+                                            <p className={styles.nmoney}>{blogitem.priceAfter} <span className={styles.bmoney}>{blogitem.pricebefore}</span></p>
+                                            <div className={styles.rating}>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
+                                            </div>
+                                            <p className={styles.sales}>{blogitem.views} <span>views</span></p>
+                                        </div>
+                                    </Link>
+
+                                    <div className={styles.cartlive}>
+                                        <Link href={`../webpages/${blogitem.slug}`}>
+                                            <button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button>
+                                        </Link>
+                                        <a href={blogitem.href} className={styles.liveprebtn} target="_blank">
+                                            Live Preview
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    })}
                 </div>
             </div>
             <div className={styles.portfolioweb}>
@@ -198,34 +310,48 @@ const websitecategory = () => {
                     <Link href="/category/portfolio" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
-                    <Cards title="Coming soon..."
-                        imgSrc="/img/noimage.jpg"
-                        viewsCount={0}
-                        pageHref="/category/all-website-categories"
-                        webHref="https://www.google.com/"
-                        bmoney="0"
-                        cost="Free" />
+                {section5Blogs.map((blogitem) => {
+                        return <div className={styles.webcard} title={blogitem.title} key={blogitem.slug}>
+                            <Link href={`../webpages/${blogitem.slug}`}>
+                                <div className={styles.webimg}>
+                                    <img src={blogitem.imgSrc} alt="/img/noimage.jpg" />
+                                    <div className={styles.cardoverlay}></div>
+                                </div>
+                            </Link>
+                            <div className={styles.webdetails}>
+                                <Link href={`../webpages/${blogitem.slug}`}>
+                                    <div className={styles.webtitle}>
+                                        <h3>{blogitem.title}</h3>
+                                        <p>by Coding Web Studio | Fully Responsive Design.</p>
+                                    </div>
+                                </Link>
+                                <div className={styles.porl}>
+                                    <Link href={`../webpages/${blogitem.slug}`}>
+                                        <div className={styles.price}>
+                                            <p className={styles.nmoney}>{blogitem.priceAfter} <span className={styles.bmoney}>{blogitem.pricebefore}</span></p>
+                                            <div className={styles.rating}>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.checked}`} /></span>
+                                                <span><FontAwesomeIcon icon={faStar} className={`${styles.fastar} ${styles.unchecked}`} /></span>
+                                            </div>
+                                            <p className={styles.sales}>{blogitem.views} <span>views</span></p>
+                                        </div>
+                                    </Link>
+
+                                    <div className={styles.cartlive}>
+                                        <Link href={`../webpages/${blogitem.slug}`}>
+                                            <button><FontAwesomeIcon icon={faShoppingCart} className={styles.facartshopping} /></button>
+                                        </Link>
+                                        <a href={blogitem.href} className={styles.liveprebtn} target="_blank">
+                                            Live Preview
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    })}
                 </div>
             </div>
         </section>

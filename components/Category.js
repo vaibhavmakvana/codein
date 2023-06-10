@@ -40,6 +40,17 @@ const Category = () => {
                         <h3>All categories</h3>
                     </div>
                     <div className={styles.categorieslist} style={categoriesListStyle}>
+                        <Link href="/category/alldesigns" legacyBehavior>
+                            <a
+                                className={`${isActiveCategory('/category/alldesigns')}`}
+                                onClick={() => handleCategoryClick('/category/alldesigns')}
+                            >
+                                <span>All Templates</span>
+                                <span>
+                                    <FontAwesomeIcon icon={faChevronRight} className={styles.chevronR} />
+                                </span>
+                            </a>
+                        </Link>
                         <Link href="/category/ecommerce" legacyBehavior>
                             <a
                                 className={`${isActiveCategory('/category/ecommerce')}`}
@@ -139,17 +150,7 @@ const Category = () => {
                                 </span>
                             </a>
                         </Link>
-                        <Link href="/category/sitetemplates" legacyBehavior>
-                            <a
-                                className={`${isActiveCategory('/category/sitetemplates')}`}
-                                onClick={() => handleCategoryClick('/category/sitetemplates')}
-                            >
-                                <span>Site Templates</span>
-                                <span>
-                                    <FontAwesomeIcon icon={faChevronRight} className={styles.chevronR} />
-                                </span>
-                            </a>
-                        </Link>
+
                     </div>
                 </div>
                 <button className={styles.catebtn} onClick={handleToggleCategories}>{buttonText}<FontAwesomeIcon icon={showAllCategories ? faAngleUp : faAngleDown} className={styles.chevronD} /></button>

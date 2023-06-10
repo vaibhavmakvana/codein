@@ -13,7 +13,7 @@ const ecommerce = () => {
       <title>Code In E-commerce</title>
     </Head>
 
-    <Searchsec name={"E-commerce Websites Templates"} pera={"Introducing our latest e-commerce website template, designed to elevate your online store. Grab it now for Free and start selling!"} />
+    <Searchsec title={"ecommerce"} name={"E-commerce Websites Templates"} pera={"Introducing our latest e-commerce website template, designed to elevate your online store. Grab it now for Free and start selling!"} />
     <Category />
     <section className={`${styles.websitefilter} ${styles.maxwidth}`}>
       <div className={styles.Ecommerceweb}>
