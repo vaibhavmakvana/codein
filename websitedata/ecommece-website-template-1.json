@@ -2,7 +2,6 @@
     "slug": "ecommece-website-template-1",
     "title": "Trishaenterprise",
     "imgSrc": "/img/trishaenterprise.png",
-    "content": "comming abhi",
     "views" : "55",
     "pricebefore": "$8",
     "priceAfter": "Free",
@@ -13,5 +12,6 @@
     "latest": "latest",
     "tegs": "Update soon",
     "pageHref": "/webpages/blog",
-    "href": "https:/google.com"
+    "href": "https:/google.com",
+    "content": "comming abhi"
 }

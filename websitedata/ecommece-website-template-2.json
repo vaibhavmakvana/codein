@@ -2,7 +2,6 @@
     "slug": "ecommece-website-template-2",
     "title": "clothyfly",
     "imgSrc": "/img/clothyfly.png",
-    "content": "sooooooon",
     "views" : "15",
     "pricebefore": "$5",
     "priceAfter": "Free",
@@ -13,5 +12,6 @@
     "latest": "latest",
     "tegs": "Update soon",
     "pageHref": "/webpages/all-website-categories",
-    "href": "https:/google.com"
+    "href": "https:/google.com",
+    "content": "sooooooon"
 }

@@ -22,7 +22,6 @@ const Ecommerce = (props) => {
       <div className={styles.Ecommerceweb}>
         <div className={styles.header}>
           <h2>Ecommerce</h2>
-          <Link href="/category/ecommerce" legacyBehavior><a>View All</a></Link>
         </div>
         <div className={styles.cardswebsite}>
           {ecommece.map((blogitem) => {

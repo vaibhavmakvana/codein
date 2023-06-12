@@ -2,8 +2,7 @@
     "slug": "our-ek-page",
     "title": "empty",
     "imgSrc": "/img/noimage.jpg",
-    "content": "comming sooooooon",
-    "views" : "8",
+    "views": "8",
     "pricebefore": "$5",
     "priceAfter": "Free",
     "lastUpdate": "infinate",
@@ -13,5 +12,6 @@
     "latest": "latest",
     "tegs": "Update soon",
     "pageHref": "/webpages/all-website-categories",
-    "href": "https:/google.com"
+    "href": "https:/google.com",
+    "content": "comming sooooooon"
 }

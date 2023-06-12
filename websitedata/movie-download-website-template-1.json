@@ -2,7 +2,6 @@
     "slug": "movie-download-website-template-1",
     "title": "makmovies",
     "imgSrc": "/img/makmovies.png",
-    "content": "comming sooooooon",
     "views" : "8",
     "pricebefore": "$5",
     "priceAfter": "Free",
@@ -13,5 +12,6 @@
     "latest": "latest",
     "tegs": "Update soon",
     "pageHref": "/webpages/all-website-categories",
-    "href": "https:/google.com"
+    "href": "https:/google.com",
+    "content": "comming sooooooon"
 }
