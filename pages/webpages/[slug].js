@@ -1,24 +1,16 @@
-import React,{ useState, useEffect } from 'react';
-// import { useRouter } from 'next/router';
+import React, { useState} from 'react';
 import Searchsec from '@/components/Searchsec'
 import styles from '../../styles/Webpage.module.css'
+import Link from 'next/link';
 import * as fs from 'fs';
+import LandingSec from '@/components/LandingSec';
 
 const Post = (props) => {
 
     const [blog, setBlog] = useState(props.myBlog);
-    // const router = useRouter();
-
-    // useEffect(() => {
-    //     if (!router.isReady) return;
-    //     const { slug } = router.query;
-    //     fetch(`http://localhost:3000/api/getblog?slug=${slug}`).then((a) => {
-    //         return a.json();
-    //     })
-    //         .then((parsed) => {
-    //             setBlog(parsed)
-    //         })
-    // }, [router.isReady])
+    function createMarkup(c) {
+        return { __html: c }
+    }
 
     const metaData = {
         lastUpdate: '08 june 2023',
@@ -30,12 +22,11 @@ const Post = (props) => {
         pages: 1,
         owner: 'Coding Web Studio',
         layout: 'Responsive',
-        tags: ['clothes', 'drink', 'fashion', 'fashion store templates', 'food', 'furniture template', 'opencart', 'opencart template', 'opencart theme', 'responsive', 'responsive opencart theme', 'wine'],
     };
 
     return <>
 
-        <Searchsec btitle={"webpages"} title={blog && blog.slug} name={blog && blog.title} pera='website page for every page need website page for every page need website page for every page need website page for every page need' />
+        <Searchsec btitle={"webpages"} title={blog && blog.slug} name={blog && blog.title} pera={blog && blog.pera} />
 
         <div className={styles.container}>
             <div className={styles.leftData}>
@@ -55,7 +46,7 @@ const Post = (props) => {
                         </a>
                     </div>
                     <div className={styles.webdatamainpera}>
-                        <p>{blog && blog.content}</p>
+                        {blog && <div dangerouslySetInnerHTML={createMarkup(blog.content)}></div>}
                     </div>
                 </div>
             </div>
@@ -71,16 +62,16 @@ const Post = (props) => {
 
                     <ul className={styles.features}>
                         <li className={styles.featureItem}>&#9989; &nbsp;   Responsive website design</li>
-                        <li className={styles.featureItem}>&#9989;  &nbsp;  Only 1 page included</li>
+                        <li className={styles.featureItem}>&#9989;  &nbsp;  Only 1 page included (index.html)</li>
                         <li className={styles.featureItem}>&#9989;  &nbsp;   Basic SEO optimization</li>
                         <li className={styles.featureItem}>&#9989;  &nbsp;  Mobile Friendly</li>
-                        <li className={styles.featureItem}>&#10150; &nbsp; &nbsp;  Contact via email</li>
+                        <Link href="/about"><li className={styles.featureItem}>&#10150; &nbsp; &nbsp;  Contact via social media (click here)</li></Link>
                         <li className={styles.featureItem}>&#10150; &nbsp; &nbsp; Full website pages available ($25)</li>
-                        <li className={styles.featureItem}>&#10150;  &nbsp; &nbsp; This Project available in next.js($25)</li>
+                        <li className={styles.featureItem}>&#10150;  &nbsp; &nbsp; This Project available in next.js ($25)</li>
                     </ul>
                     <div className={styles.buttons}>
-                        <a href="https://makmovies-codingstudio.netlify.app/" className={`${styles.btn} ${styles.addToCart}`} target="_blank">Visit Website</a>
-                        <a href="/img/noimage.jpg" download className={`${styles.btn} ${styles.download}`}>Download Now</a>
+                        <a href={blog && blog.href} className={`${styles.btn} ${styles.addToCart}`} target="_blank">Visit Website</a>
+                        <a href={blog && blog.Downloadhref} download className={`${styles.btn} ${styles.download}`}>Download Code</a>
                     </div>
                 </div>
                 <div className={styles.webdetailesbox}>
@@ -123,16 +114,30 @@ const Post = (props) => {
                                     <td className={styles.td}>Layout :</td>
                                     <td className={styles.td2}>{metaData.layout}</td>
                                 </tr>
-                                <tr>
-                                    <td className={styles.td}>Tags :</td>
-                                    <td className={styles.td2}>{metaData.tags.join(', ')}</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+                <div className={styles.tegbox}>
+                    <div className={styles.tegtitle}>
+                        <h3>Category</h3>
+                    </div>
+                    <div className={styles.tegs}>
+                        <Link href="/category/alldesigns" legacyBehavior><a>All Design</a></Link>
+                        <Link href="/" legacyBehavior><a>Home</a></Link>
+                        <Link href="/category/ecommerce" legacyBehavior><a>E-commerce</a></Link>
+                        <Link href="/category/gaming" legacyBehavior><a>Gaming</a></Link>
+                        <Link href="/category/portfolio" legacyBehavior><a>Portfolio</a></Link>
+                        <Link href="/category/blogging" legacyBehavior><a>Blogging</a></Link>
+                        <Link href="/category/movies" legacyBehavior><a>Movies</a></Link>
+                        <Link href="/category/bussiness" legacyBehavior><a>Business</a></Link>
+                        <Link href="/category/event" legacyBehavior><a>Event</a></Link>
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <LandingSec/>
     </>
 }
 
@@ -150,17 +155,7 @@ export async function getStaticPaths() {
     };
 }
 
-// export async function getStaticPaths() {
-//     return {
-//         paths: [
-//             { params: { slug: 'ecommece-website-template-1' } },
-//             { params: { slug: 'ecommece-website-template-1' } },
-//             { params: { slug: 'movie-download-website-template-1' } },
-//             { params: { slug: 'our-ek-page' } },
-//         ],
-//         fallback: true // false or 'blocking'
-//     };
-// }
+
 
 export async function getStaticProps(context) {
     const { slug } = context.params;

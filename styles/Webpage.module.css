@@ -7,7 +7,8 @@
     justify-content: space-between;
     gap: 10px;
 }
-@media screen and (max-width:1165px){
+
+@media screen and (max-width:1165px) {
     .container {
         flex-wrap: wrap;
         justify-content: center;
@@ -40,6 +41,7 @@
     text-align: center;
     border-radius: 5px;
 }
+
 
 .webdatacard {
     width: 100%;
@@ -140,6 +142,10 @@
 }
 
 /* button end */
+.webdatamainpera {
+    margin-top: 30px;
+    width: 100%;
+}
 
 .priceBox {
     background-color: #f7f7f7;
@@ -151,67 +157,75 @@
     margin-bottom: 50px;
     border-radius: 5px;
 }
-.topprice{
+
+.topprice {
     width: 100%;
     border-bottom: 1px solid #999;
     display: flex;
     padding-bottom: 10px;
     justify-content: space-between;
 }
-.priceLabel{
+
+.priceLabel {
     font-size: 20px;
     letter-spacing: 2px;
     font-weight: 600;
     padding-top: 5px;
     color: #333;
 }
-.priceContainer{
+
+.priceContainer {
     display: flex;
     align-items: center;
 }
 
-.pricebefore{
+.pricebefore {
     font-size: 30px;
     font-weight: 500;
     color: #666;
     text-decoration: line-through;
     margin: 0 10px;
 }
-.priceAfter{
+
+.priceAfter {
     font-size: 35px;
     margin: 0 5px;
     color: #4CAF50;
 }
 
-.features{
+.features {
     display: flex;
     flex-direction: column;
     align-items: left;
     padding: 20px 30px;
     list-style: none;
-    
+
 }
-.featureItem{
+
+.featureItem {
     margin: 5px 0;
     text-align: left;
 }
 
-.buttons{
+.buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px
+    padding: 0 30px;
 }
 
-.btn{
+.btn {
     background-color: #4CAF50;
     padding: 10px 8px;
-    border-radius: 8px;
+    border-radius: 5px;
     color: white;
-    box-shadow: 0 3px 8px #333;
+    box-shadow: 0 3px 8px #555;
 }
-
-.webdetailesbox{
+.btn:hover{
+    background-color: #add7ae;
+    color: black;
+}
+.webdetailesbox {
     background-color: #f7f7f7;
     border: 1px solid #e5e5e5;
     padding: 25px;
@@ -222,7 +236,7 @@
     border-radius: 5px;
 }
 
-.td{
+.td {
     color: #222;
     font-weight: bold;
     padding-bottom: 15px;
@@ -230,17 +244,81 @@
     padding-right: 15px;
     width: 44%;
 }
-.td2{
+
+.td2 {
     padding-bottom: 15px;
     padding-left: 15px;
     color: #555;
 }
-
-@media screen and (max-width:1165px){
+/* teg box start */
+.tegbox{
+    background-color: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+.tegtitle{
+    width: 100%;
+    background-color: #e9f0e8;
+    padding: 20px;
+    /* border-radius: 8px; */
+    border-bottom: 2px solid #999;
+}
+.tegtitle h3{
+    color: #333;
+}
+.tegs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+.tegs a{
+    background-color: #e1e1e1;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.tegs a:hover{
+    background-color: #4CAF50;
+}
+/* teg box end */
+@media screen and (max-width:1165px) {
     .leftData {
         width: 100%;
     }
-    .rightsidebar{
+
+    .rightsidebar {
         width: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .webTitle h1 {
+        font-size: 20px;
+    }
+    .uiverse{
+        width: 113px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .webTitle h1 {
+        font-size: 17px;
+    }
+
+    .webdatamainimg {
+        padding: 8px 8px 60px 8px;
+    }
+    .features{
+        padding: 20px 11px;
+    }
+    .buttons{
+        padding: 0 10px;
     }
 }

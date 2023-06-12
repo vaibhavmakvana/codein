@@ -800,6 +800,11 @@
         font-size: 16px;
     }
 
+    .pagelist ul li,
+    .pagelist ul li a {
+        font-size: 13px;
+    }
+
 }
 
 @media screen and (max-width:400px) {
