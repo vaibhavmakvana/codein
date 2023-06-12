@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head'
 import styles from '../../styles/Websites.module.css'
 import Category from '../../components/Category';
@@ -6,19 +6,10 @@ import Searchsec from '../../components/Searchsec';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link';
+import * as fs from 'fs';
 
-const Alldesigns = () => {
-    const [blogs, setBlogs] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:3000/api/blogs').then((a) => {
-            return a.json();
-        })
-            .then((parsed) => {
-                console.log(parsed)
-                setBlogs(parsed)
-            })
-    }, [])
-
+const Alldesigns = (props) => {
+    const [blogs1, set1Blogs] = useState(props.allBlogs);
 
     return (
         <>
@@ -33,7 +24,7 @@ const Alldesigns = () => {
                         <h2>All Templates and Themes Designs</h2>
                     </div>
                     <div className={styles.cardswebsite}>
-                        {blogs.map((blogitem) => {
+                        {blogs1.map((blogitem) => {
                             return <div className={styles.webcard} title={blogitem.title} key={blogitem.slug}>
                                 <Link href={`../webpages/${blogitem.slug}`}>
                                     <div className={styles.webimg}>
@@ -79,8 +70,25 @@ const Alldesigns = () => {
                 </div>
             </section>
 
+
         </>
     )
 }
 
+export async function getStaticProps(context) {
+    let data = await fs.promises.readdir("websitedata");
+    let myfile;
+    let allBlogs = [];
+    for (let index = 0; index < data.length; index++) {
+        const item = data[index];
+        console.log(item)
+        myfile = await fs.promises.readFile(('websitedata/' + item), 'utf-8')
+        allBlogs.push(JSON.parse(myfile))
+    }
+
+    return {
+        props: { allBlogs }, // will be passed to the page component as props
+    }
+
+}
 export default Alldesigns

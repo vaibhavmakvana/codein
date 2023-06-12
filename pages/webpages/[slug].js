@@ -1,23 +1,24 @@
 import React,{ useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import Searchsec from '@/components/Searchsec'
 import styles from '../../styles/Webpage.module.css'
+import * as fs from 'fs';
 
-const Post = () => {
+const Post = (props) => {
 
-    const [blog, setBlog] = useState();
-    const router = useRouter();
+    const [blog, setBlog] = useState(props.myBlog);
+    // const router = useRouter();
 
-    useEffect(() => {
-        if (!router.isReady) return;
-        const { slug } = router.query;
-        fetch(`http://localhost:3000/api/getblog?slug=${slug}`).then((a) => {
-            return a.json();
-        })
-            .then((parsed) => {
-                setBlog(parsed)
-            })
-    }, [router.isReady])
+    // useEffect(() => {
+    //     if (!router.isReady) return;
+    //     const { slug } = router.query;
+    //     fetch(`http://localhost:3000/api/getblog?slug=${slug}`).then((a) => {
+    //         return a.json();
+    //     })
+    //         .then((parsed) => {
+    //             setBlog(parsed)
+    //         })
+    // }, [router.isReady])
 
     const metaData = {
         lastUpdate: '08 june 2023',
@@ -135,4 +136,40 @@ const Post = () => {
     </>
 }
 
+export async function getStaticPaths() {
+    const jsonFiles = fs.readdirSync('websitedata');
+    const paths = jsonFiles.map((file) => {
+        const jsonData = fs.readFileSync(`websitedata/${file}`);
+        const slug = JSON.parse(jsonData).slug;
+        return { params: { slug } };
+    });
+
+    return {
+        paths,
+        fallback: true // false or 'blocking'
+    };
+}
+
+// export async function getStaticPaths() {
+//     return {
+//         paths: [
+//             { params: { slug: 'ecommece-website-template-1' } },
+//             { params: { slug: 'ecommece-website-template-1' } },
+//             { params: { slug: 'movie-download-website-template-1' } },
+//             { params: { slug: 'our-ek-page' } },
+//         ],
+//         fallback: true // false or 'blocking'
+//     };
+// }
+
+export async function getStaticProps(context) {
+    const { slug } = context.params;
+
+
+    let myBlog = await fs.promises.readFile(`websitedata/${slug}.json`, 'utf-8')
+
+    return {
+        props: { myBlog: JSON.parse(myBlog) }, // will be passed to the page component as props
+    }
+}
 export default Post

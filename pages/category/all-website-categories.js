@@ -7,56 +7,15 @@ import { faStar, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import Typed from 'typed.js';
 import Head from 'next/head';
 import Category from '../../components/Category';
+import * as fs from 'fs';
 
-const websitecategory = () => {
-    // const [blogs, setBlogs] = useState([]);
-    // useEffect(() => {
-    //     fetch('http://localhost:3000/api/blogs').then((a) => {
-    //         return a.json();
-    //     })
-    //         .then((parsed) => {
-    //             console.log(parsed)
-    //             setBlogs(parsed.slice(0, 3));
-    //         })
-    // }, []);
-    const [section1Blogs, setSection1Blogs] = useState([]);
-    const [section2Blogs, setSection2Blogs] = useState([]);
-    const [section3Blogs, setSection3Blogs] = useState([]);
-    const [section4Blogs, setSection4Blogs] = useState([]);
-    const [section5Blogs, setSection5Blogs] = useState([]);
-
-
-    useEffect(() => {
-        fetch('http://localhost:3000/api/blogs')
-            .then((response) => response.json())
-            .then((parsed) => {
-                // Assuming parsed is an array of blog posts
-
-                // Filter posts based on their types
-                const type2Blogs = parsed.filter((blogitem) => blogitem.type === 'ecommece');
-                const type3Blogs = parsed.filter((blogitem) => blogitem.type === 'ecommece');
-                const type4Blogs = parsed.filter((blogitem) => blogitem.type === 'ecommece');
-                const type5Blogs = parsed.filter((blogitem) => blogitem.type === 'ecommece');
-
-
-                // Set section 1 blogs
-                setSection1Blogs(parsed.slice(0, 3));
-
-                // Set section 2 blogs
-                setSection2Blogs(type2Blogs.slice(0, 4));
-
-                // Set section 3 blogs
-                setSection3Blogs(type3Blogs);
-
-                // Set section 4 blogs
-                setSection4Blogs(type4Blogs);
-
-                // Set section 4 blogs
-                setSection5Blogs(type5Blogs);
-
-        
-            });
-    }, []);
+const websitecategory = (props) => {
+    const [section1Blogs, setSection1Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.latest === 'latest').slice(0,3));
+    const [section2Blogs, setSection2Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.type === 'blogging').slice(0,4));
+    const [section3Blogs, setSection3Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.type === 'ecommece').slice(0,4));
+    const [section4Blogs, setSection4Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.type === 'gaming').slice(0,4));
+    const [section5Blogs, setSection5Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.type === 'portfolio').slice(0,4));
+  
 
     const typedRef = useRef(null);
 
@@ -382,5 +341,20 @@ const websitecategory = () => {
     </>
     )
 }
+export async function getStaticProps(context) {
+    let data = await fs.promises.readdir("websitedata");
+    let myfile;
+    let allBlogs = [];
+    for (let index = 0; index < data.length; index++) {
+        const item = data[index];
+        console.log(item)
+        myfile = await fs.promises.readFile(('websitedata/' + item), 'utf-8')
+        allBlogs.push(JSON.parse(myfile))
+    }
 
+    return {
+        props: { allBlogs }, // will be passed to the page component as props
+    }
+    
+}
 export default websitecategory
