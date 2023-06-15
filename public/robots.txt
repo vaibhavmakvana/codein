@@ -1,0 +1,12 @@
+# Block all crawlers for /accounts
+User-agent: *
+Disallow: /accounts
+Disallow: /500
+Disallow: /404
+Disallow: /nogooglebot/
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+Sitemap: https://codingwebstudio/sitemap.xml
