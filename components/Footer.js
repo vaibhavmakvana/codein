@@ -11,37 +11,37 @@ const Footer = () => {
                     <div className={Styles.shop}>
                         <ul>
                             <h4>CODING STUDIO</h4>
-                            <li><Link href='/' legacyBehavior><a>New In</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>E-commerce</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Gaming</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Marketing</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Accessories</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Blogging</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Sale & Special Offers</a></Link></li>
+                            <li><Link href='/category/alldesigns/' legacyBehavior><a>New In</a></Link></li>
+                            <li><Link href='/category/ecommerce/' legacyBehavior><a>E-commerce</a></Link></li>
+                            <li><Link href='/category/gaming/' legacyBehavior><a>Gaming</a></Link></li>
+                            <li><Link href='/category/ecommerce/' legacyBehavior><a>Marketing</a></Link></li>
+                            <li><Link href='/category/portfolio/' legacyBehavior><a>Portfolio</a></Link></li>
+                            <li><Link href='/category/blogging/' legacyBehavior><a>Blogging</a></Link></li>
+                            <li><Link href='/category/alldesigns/' legacyBehavior><a>Sale & Special Themes</a></Link></li>
                         </ul>
                     </div>
                     <div className={Styles.information}>
                         <ul>
                             <h4>INFORMATION</h4>
-                            <li><Link href='/' legacyBehavior><a>About</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Customer Service</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Reward Program</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Shipping & Returns</a></Link></li>
+                            <li><Link href='/about/' legacyBehavior><a>About</a></Link></li>
+                            <li><Link href='/about/' legacyBehavior><a>Contact Us</a></Link></li>
+                            <li><Link href='/' legacyBehavior><a>Comming soon</a></Link></li>
+                            <li><Link href='/' legacyBehavior><a>Comming soon</a></Link></li>
+                            <li><Link href='/category/blogging/' legacyBehavior><a>Blog</a></Link></li>
                             <li><Link href='/' legacyBehavior><a>Privacy Policy</a></Link></li>
                             <li><Link href='/' legacyBehavior><a>Terms & Conditions</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Blog</a></Link></li>
                         </ul>
                     </div>
                     <div className={Styles.customerService}>
                         <ul>
                             <h4>CUSTOMER SERVICE</h4>
                             <li><Link href='/' legacyBehavior><a>Search Terms</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Advanced Search</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Contact Us</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Sale & Special Offers</a></Link></li>
+                            <li><Link href='/category/all-website-categories/' legacyBehavior><a>Advanced Search</a></Link></li>
+                            <li><Link href='/about/' legacyBehavior><a>Contact Us</a></Link></li>
+                            <li><Link href='/' legacyBehavior><a>Comming soon</a></Link></li>
+                            <li><Link href='/category/alldesigns/' legacyBehavior><a>Websites</a></Link></li>
                             <li><Link href='/' legacyBehavior><a>Website FAQs</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Websites</a></Link></li>
-                            <li><Link href='/' legacyBehavior><a>Orders And Returns</a></Link></li>
+                            <li><Link href='/sitemap.xml/' legacyBehavior><a>Site Map</a></Link></li>
                         </ul>
                     </div>
                     <div className={Styles.signup}>

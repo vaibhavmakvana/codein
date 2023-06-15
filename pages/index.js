@@ -1,14 +1,12 @@
 import Head from 'next/head'
-// import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Typed from 'typed.js';
+import * as fs from 'fs';
 
-
-// const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+export default function Home(props) {
+  const [blogs1, set1Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.latest === 'latest').slice(0,8));
   const typedRef = useRef(null);
 
   useEffect(() => {
@@ -58,7 +56,7 @@ export default function Home() {
   return (<>
 
     <Head>
-      <title>CodeIn</title>
+      <title>Codingwebstudio | Mastering the Art of Web Development </title>
     </Head>
     <main>
       <section className={styles.banner}>
@@ -128,41 +126,41 @@ export default function Home() {
       <section className={styles.webcategory}>
         <div className={styles.webcateCont}>
           <div className={styles.catecard} title="Html Websites Templates">
-            <a href="/" className={styles.titlecard}>
+            <Link href="/category/ecommerce/" className={styles.titlecard}>
               <h1>E-Commerce Websites</h1>
               <h3>Thousands of WordPress themes</h3>
-            </a>
+            </Link>
             <div className={styles.newthemes}>
-              <a href="/">Newest</a>
-              <a href="/">View</a>
+              <Link href="/category/alldesigns/">Newest</Link>
+              <Link href="/category/ecommerce/">View</Link>
             </div>
             <div className={styles.cateImg}>
-              <img src="/img/Clothyfly.PNG" alt="" />
+              <img src="/img/clothyfly/Clothyfly.PNG" alt="" />
               <img src="/img/html.png" alt="" />
             </div>
           </div>
           <div className={styles.catecard} title="Html Websites Templates">
-            <a href="/" className={styles.titlecard}>
+            <Link href="/category/blogging/" className={styles.titlecard}>
               <h1>Blog Websites</h1>
               <h3>Thousands of WordPress themes</h3>
-            </a>
+            </Link>
             <div className={styles.newthemes}>
-              <a href="/">Newest</a>
-              <a href="/">View</a>
+              <Link href="/category/alldesigns/">Newest</Link>
+              <Link href="/category/blogging/">View</Link>
             </div>
             <div className={styles.cateImg}>
-              <img src="/img/trishaenterprise.PNG" alt="" />
+              <img src="/img/trishaenterprise/trishaenterprise.png" alt="" />
               <img src="/img/php.png" alt="" />
             </div>
           </div>
           <div className={styles.catecard} title="Html Websites Templates">
-            <a href="/" className={styles.titlecard}>
-              <h1>Fathion Websites</h1>
+            <Link href="/category/ecommerce/" className={styles.titlecard}>
+              <h1>Fashion Websites</h1>
               <h3>Thousands of WordPress themes</h3>
-            </a>
+            </Link>
             <div className={styles.newthemes}>
-              <a href="/">Newest</a>
-              <a href="/">View</a>
+              <Link href="/category/alldesigns/">Newest</Link>
+              <Link href="/category/ecommerce/">View</Link>
             </div>
             <div className={styles.cateImg}>
               <img src="/img/noimage.jpg" alt="" />
@@ -170,13 +168,13 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.catecard} title="Html Websites Templates">
-            <a href="/" className={styles.titlecard}>
+            <Link href="/category/gaming/" className={styles.titlecard}>
               <h1>Gaming Websites</h1>
               <h3>Thousands of WordPress themes</h3>
-            </a>
+            </Link>
             <div className={styles.newthemes}>
-              <a href="/">Newest</a>
-              <a href="/">View</a>
+              <Link href="/category/alldesigns/">Newest</Link>
+              <Link href="/category/gaming/">View</Link>
             </div>
             <div className={styles.cateImg}>
               <img src="/img/noimage.jpg" alt="" />
@@ -184,27 +182,27 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.catecard} title="Html Websites Templates">
-            <a href="/" className={styles.titlecard}>
+            <Link href="/category/movies/" className={styles.titlecard}>
               <h1>Entertainment Websites</h1>
               <h3>Thousands of WordPress themes</h3>
-            </a>
+            </Link>
             <div className={styles.newthemes}>
-              <a href="/">Newest</a>
-              <a href="/">View</a>
+              <Link href="/category/alldesigns/">Newest</Link>
+              <Link href="/category/movies/">View</Link>
             </div>
             <div className={styles.cateImg}>
-              <img src="/img/makmovies.PNG" alt="" />
+              <img src="/img/makmovie/makmovies.PNG" alt="" />
               <img src="/img/html.png" alt="" />
             </div>
           </div>
           <div className={styles.catecard} title="Html Websites Templates">
-            <a href="/" className={styles.titlecard}>
+            <Link href="/category/ecommerce/" className={styles.titlecard}>
               <h1>Health & Beauty Websites</h1>
               <h3>Thousands of WordPress themes</h3>
-            </a>
+            </Link>
             <div className={styles.newthemes}>
-              <a href="/">Newest</a>
-              <a href="/">View</a>
+              <Link href="/category/alldesigns/">Newest</Link>
+              <Link href="/category/ecommerce/">View</Link>
             </div>
             <div className={styles.cateImg}>
               <img src="/img/noimage.jpg" alt="" />
@@ -221,7 +219,7 @@ export default function Home() {
 
       <section className={styles.uniqweb}>
         <div className={styles.uniqimgbx}>
-          <img src="/img/makmovies.PNG" alt="" />
+          <img src="/img/makmovie/makmovies.PNG" alt="" />
         </div>
         <div className={styles.uniqtext}>
           <h2>Unique themes and templates for every budget and every project.</h2>
@@ -232,69 +230,14 @@ export default function Home() {
       <section id="website" className={styles.website}>
         <h2>LETEST WEBSITES WITH CODES</h2>
         <div className={styles.cardscontainer} ref={cardsContainer}>
-          <div className={styles.card}>
-            <a href="/">
-              <img src="/img/Clothyfly.PNG" alt="Movie 1" />
-              <span>VIEW LIVE</span>
-            </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/">
-              <img src="/img/makmovies.PNG" alt="Movie 2" />
-              <span>VIEW LIVE</span>
-            </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/">
-              <img src="/img/trishaenterprise.PNG" alt="Movie 3" />
-              <span>VIEW LIVE</span>
-            </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/">
-              <img src="/img/noimage.jpg" alt="Movie 4" />
-              <span>VIEW LIVE</span>
-            </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/">
-              <img src="/img/noimage.jpg" alt="Movie 5" />
-              <span>VIEW LIVE</span>
-            </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/">
-              <img src="/img/noimage.jpg" alt="Movie 6" />
-              <span>VIEW LIVE</span>
-            </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/">
-              <img src="/img/noimage.jpg" alt="Movie 6" />
-              <span>VIEW LIVE</span>
-            </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/">
-              <img src="/img/noimage.jpg" alt="Movie 6" />
-              <span>VIEW LIVE</span>
-            </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/">
-              <img src="/img/noimage.jpg" alt="Movie 6" />
-              <span>VIEW LIVE</span>
-            </a>
-          </div>
-          <div className={styles.card}>
-            <Link href="/" legacyBehavior>
-              <a>
-                <img src="/img/noimage.jpg" alt="Movie 6" />
+          {blogs1.map((blogitem) => {
+            return <div className={styles.card} key={blogitem.slug}>
+              <Link href={`../webpages/${blogitem.slug}`}>
+                <img src={blogitem.imgSrc} alt="Movie 1" />
                 <span>VIEW LIVE</span>
-              </a>
-            </Link>
-          </div>
-
+              </Link>
+            </div>
+          })}
         </div>
         <div className={styles.prev} ref={slidePrev} onClick={handlePrevClick}><img src="/img/back.png" className={styles.fasolid} /></div>
         <div className={styles.next} ref={slideNext} onClick={handleNextClick}><img src="/img/next.png" className={styles.fasolid} /></div>
@@ -302,4 +245,23 @@ export default function Home() {
     </main>
   </>
   )
+
 }
+
+export async function getStaticProps(context) {
+  let data = await fs.promises.readdir("websitedata");
+  let myfile;
+  let allBlogs = [];
+  for (let index = 0; index < data.length; index++) {
+    const item = data[index];
+    console.log(item)
+    myfile = await fs.promises.readFile(('websitedata/' + item), 'utf-8')
+    allBlogs.push(JSON.parse(myfile))
+  }
+
+  return {
+    props: { allBlogs }, // will be passed to the page component as props
+  }
+
+}
+

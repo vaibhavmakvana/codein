@@ -13,7 +13,7 @@ const websitecategory = (props) => {
     const [section1Blogs, setSection1Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.latest === 'latest').slice(0,3));
     const [section2Blogs, setSection2Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.type === 'blogging').slice(0,4));
     const [section3Blogs, setSection3Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.type === 'ecommece').slice(0,4));
-    const [section4Blogs, setSection4Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.type === 'gaming').slice(0,4));
+    const [section4Blogs, setSection4Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.type === 'movie').slice(0,4));
     const [section5Blogs, setSection5Blogs] = useState(props.allBlogs.filter((blogitem) => blogitem.type === 'portfolio').slice(0,4));
   
 
@@ -37,7 +37,7 @@ const websitecategory = (props) => {
 
     return (<>
         <Head>
-            <title>Code In Category</title>
+            <title>All website Free & premium templates | Codingwebstudio</title>
         </Head>
         <section className={styles.searchsec}>
             <div className={`${styles.websearch} ${styles.maxwidth}`}>
@@ -68,6 +68,7 @@ const websitecategory = (props) => {
                 <div className={styles.cardswebsite}>
                     {section1Blogs.map((blogitem) => {
                         return <div className={styles.webcard} title={blogitem.title} key={blogitem.slug}>
+                           
                             <Link href={`../webpages/${blogitem.slug}`}>
                                 <div className={styles.webimg}>
                                     <img src={blogitem.imgSrc} alt="/img/noimage.jpg" />
@@ -107,6 +108,7 @@ const websitecategory = (props) => {
                                 </div>
                             </div>
                         </div>
+                        
                     })}
                 </div>
             </div >
@@ -115,7 +117,7 @@ const websitecategory = (props) => {
         <section className={`${styles.websitefilter} ${styles.maxwidth}`}>
             <div className={styles.blogging}>
                 <div className={styles.header}>
-                    <h2>Blogging</h2>
+                    <h2>Blogging - Template Comming Soon</h2>
                     <Link href="/category/blogging" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>
@@ -265,7 +267,7 @@ const websitecategory = (props) => {
             </div>
             <div className={styles.portfolioweb}>
                 <div className={styles.header}>
-                    <h2>Portfolio</h2>
+                    <h2>Portfolio - Template Comming Soon</h2>
                     <Link href="/category/portfolio" legacyBehavior><a>View All</a></Link>
                 </div>
                 <div className={styles.cardswebsite}>

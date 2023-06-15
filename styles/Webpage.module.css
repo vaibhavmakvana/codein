@@ -6,6 +6,7 @@
     /* flex-wrap: wrap; */
     justify-content: space-between;
     gap: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 @media screen and (max-width:1165px) {
@@ -27,8 +28,6 @@
 .rightsidebar {
     width: 460px;
     height: 100%;
-    /* background-color: rgb(232, 239, 239); */
-    /* padding: 30px; */
     margin: 0 20px;
     border-radius: 5px;
 }
@@ -40,6 +39,10 @@
     padding: 20px;
     text-align: center;
     border-radius: 5px;
+}
+
+.webTitle h1 {
+    font-family: math;
 }
 
 
@@ -221,10 +224,12 @@
     color: white;
     box-shadow: 0 3px 8px #555;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #add7ae;
     color: black;
 }
+
 .webdetailesbox {
     background-color: #f7f7f7;
     border: 1px solid #e5e5e5;
@@ -250,8 +255,9 @@
     padding-left: 15px;
     color: #555;
 }
+
 /* teg box start */
-.tegbox{
+.tegbox {
     background-color: #f7f7f7;
     border: 1px solid #e5e5e5;
     padding: 25px;
@@ -261,31 +267,37 @@
     margin-bottom: 50px;
     border-radius: 5px;
 }
-.tegtitle{
+
+.tegtitle {
     width: 100%;
     background-color: #e9f0e8;
     padding: 20px;
     /* border-radius: 8px; */
     border-bottom: 2px solid #999;
 }
-.tegtitle h3{
+
+.tegtitle h3 {
     color: #333;
 }
-.tegs{
+
+.tegs {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 30px;
 }
-.tegs a{
+
+.tegs a {
     background-color: #e1e1e1;
     padding: 10px 20px;
     border-radius: 8px;
     font-size: 14px;
 }
-.tegs a:hover{
+
+.tegs a:hover {
     background-color: #4CAF50;
 }
+
 /* teg box end */
 @media screen and (max-width:1165px) {
     .leftData {
@@ -301,7 +313,8 @@
     .webTitle h1 {
         font-size: 20px;
     }
-    .uiverse{
+
+    .uiverse {
         width: 113px;
         height: 35px;
     }
@@ -315,10 +328,12 @@
     .webdatamainimg {
         padding: 8px 8px 60px 8px;
     }
-    .features{
+
+    .features {
         padding: 20px 11px;
     }
-    .buttons{
+
+    .buttons {
         padding: 0 10px;
     }
 }

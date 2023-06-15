@@ -13,7 +13,7 @@ const Ecommerce = (props) => {
   const [ecommece, setSectionBlogs] = useState(props.allBlogs.filter((blogitem) => blogitem.type === 'ecommece'));
   return (<>
     <Head>
-      <title>Code In E-commerce</title>
+      <title>Professional eCommerce Website Solutions | Codingwebstudio</title> 
     </Head>
 
     <Searchsec title={"ecommerce"} name={"E-commerce Websites Templates"} pera={"Introducing our latest e-commerce website template, designed to elevate your online store. Grab it now for Free and start selling!"} />

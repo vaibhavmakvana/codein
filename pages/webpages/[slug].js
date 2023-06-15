@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import Searchsec from '@/components/Searchsec'
 import styles from '../../styles/Webpage.module.css'
 import Link from 'next/link';
+import Head from 'next/head'
 import * as fs from 'fs';
 import LandingSec from '@/components/LandingSec';
 
@@ -25,8 +26,10 @@ const Post = (props) => {
     };
 
     return <>
-
-        <Searchsec btitle={"webpages"} title={blog && blog.slug} name={blog && blog.title} pera={blog && blog.pera} />
+    <Head>
+        <title>{blog && blog.searchbxtitle} | Codingwebstudio</title>
+    </Head>
+        <Searchsec btitle={"webpages"} title={blog && blog.slug} name={blog && blog.searchbxtitle} pera={blog && blog.pera} />
 
         <div className={styles.container}>
             <div className={styles.leftData}>

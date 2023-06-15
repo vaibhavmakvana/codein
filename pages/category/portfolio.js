@@ -13,7 +13,7 @@ const portfolio = (props) => {
   return (
     <>
       <Head>
-        <title>Code In Portfolio</title>
+        <title>Empowering Your Portfolio Online | Codingwebstudio</title>
       </Head>
       <Searchsec title={"protfolio"} name={"Portfolio Websites Templates"} pera={"Elevate your professional portfolio with our cutting-edge website template. Download it for free and make a lasting impression!"} />
       <Category />

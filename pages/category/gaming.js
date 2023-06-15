@@ -13,7 +13,7 @@ const gaming = (props) => {
   return (
     <>
       <Head>
-        <title>Code In Gaming</title>
+        <title>Launch Your Gaming Website with Style | Codingwebstudio</title>
       </Head>
       <Searchsec title={"gaming"} name={"Gaming Websites Templates"} pera={"Embark on an epic gaming adventure with our state-of-the-art website template. Download it for free and level up your website today!"} />
       <Category />

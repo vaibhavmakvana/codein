@@ -14,7 +14,7 @@ const Alldesigns = (props) => {
     return (
         <>
             <Head>
-                <title>Code In all designs</title>
+                <title>All website Free & premium templates | Codingwebstudio</title>
             </Head>
             <Searchsec title={"designs"} name={"All designs Websites Templates"} pera={"Ignite your blog's success with our powerful website template. Download it for free and inspire your readers with captivating content!"} />
             <Category />

@@ -1,5 +1,4 @@
 import * as fs from 'fs';
-// valid slug is http://localhost:3000/api/getblog?slug=website-demo-one
 export default async function handler(req, res) {
 
 
@@ -12,3 +11,24 @@ export default async function handler(req, res) {
         res.status(200).json(JSON.parse(data))
     })
 }
+
+
+
+// For markdown file 
+
+
+// import * as fs from 'fs';
+// import MarkdownIt from 'markdown-it';
+
+// export default async function handler(req, res) {
+//   const md = new MarkdownIt();
+
+//   fs.readFile(`websitedata/${req.query.slug}.md`, 'utf-8', (err, data) => {
+//     if (err) {
+//       res.status(500).json({ error: "No such blog found" });
+//     } else {
+//       const html = md.render(data);
+//       res.status(200).send(html);
+//     }
+//   });
+// }

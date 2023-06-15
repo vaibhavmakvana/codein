@@ -14,7 +14,7 @@ const blogging = (props) => {
   return (
     <>
       <Head>
-        <title>Code In Blogging</title>
+        <title>Professional Templates for Bloggers | Codingwebstudio</title>
       </Head>
       <Searchsec title={"blogging"} name={"Blogging Websites Templates"} pera={"Ignite your blog's success with our powerful website template. Download it for free and inspire your readers with captivating content!"} />
       <Category />

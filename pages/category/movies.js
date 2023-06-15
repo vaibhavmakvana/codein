@@ -13,7 +13,7 @@ const movie = (props) => {
   return (
     <>
       <Head>
-        <title>Code In Movie Websites</title>
+        <title>Create Stunning Movie Websites | Codingwebstudio</title>
       </Head>
       <Searchsec title={"movies"} name={"Movie Websites Templates"} pera={"Introducing our latest movie website template: a sleek and modern design to showcase your films professionally."} />
       <Category />
