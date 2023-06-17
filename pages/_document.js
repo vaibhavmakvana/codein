@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 export default function Document() {
   return (
@@ -7,7 +8,7 @@ export default function Document() {
         <meta name="description"
           content="CodingWebStudio offers free and paid website code solutions for businesses looking to establish a strong online presence. Our Website delivers high-quality, responsive, and user-friendly web solutions. From front-end design to back-end development, we provide comprehensive coding services to help businesses thrive in the digital world." />
         <meta name="keywords"
-          content="web development, web studio, website design, responsive websites, innovative websites, user-friendly websites, coding solutions, web design, coding, custom websites, front-end development, back-end development, coding services, web development agency,free website code, paid website code, responsive design, customizable templates, bespoke designs, web development services, digital marketing, UI/UX design, HTML, CSS, JavaScript, React, Next.js, Node.js, PHP, Laravel, WordPress, Shopify" />
+          content="codingwebstudio, codingstudio, coding web studio, web development, web studio, website design, responsive websites, innovative websites, user-friendly websites, coding solutions, web design, coding, custom websites, front-end development, back-end development, coding services, web development agency,free website code, paid website code, responsive design, customizable templates, bespoke designs, web development services, digital marketing, UI/UX design, HTML, CSS, JavaScript, React, Next.js, Node.js, PHP, Laravel, WordPress, Shopify" />
         <meta name="author" content="CodingWebStudio" />
         <meta property="og:title" content="CodingWebStudio | Professional Coding Services for Web Development" />
         <meta property="og:description"
@@ -18,6 +19,19 @@ export default function Document() {
         <link
           href="https://fonts.googleapis.com/css2?family=Righteous&family=Signika+Negative:wght@600&family=Trade+Winds&display=swap"
           rel="stylesheet"></link>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-828R6W0BWX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-828R6W0BWX');
+        `}
+        </Script>
       </Head>
       <body>
         <Main />
