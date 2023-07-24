@@ -56,7 +56,7 @@ export default function Home(props) {
   return (<>
 
     <Head>
-      <title>Codingwebstudio | Mastering the Art of Web Development </title>
+      <title>Codingwebstudio | Mastering the Art of Web Developmen</title>
     </Head>
     <main>
       <section className={styles.banner}>

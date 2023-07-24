@@ -17,13 +17,13 @@ const about = () => {
         <a href="https://www.instagram.com/it.s__venom" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faInstagram} />
         </a>
-        <a href="https://www.facebook.com/your_facebook_username" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/it.s__venom" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faFacebook} />
         </a>
-        <a href="https://t.me/your_telegram_username" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/it.s__venom" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faTelegram} />
         </a>
-        <a href="https://www.youtube.com/@codingwebstudio" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/it.s__venom" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faYoutube} />
         </a>
       </div>
